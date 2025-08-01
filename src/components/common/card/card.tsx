@@ -1,4 +1,4 @@
-import CardProps from './Card.props';
+import CardProps from './card.props';
 
 export default function Card(props: CardProps): JSX.Element {
   const { isPremium, src, price, name, type } = props;

@@ -1,6 +1,7 @@
-import CardType from '../../types/cardType';
+import CardType from './cardType';
 
-type CardProps = {
+type Card = {
+  id: number;
   isPremium: boolean;
   src: string;
   price: number;
@@ -8,7 +9,6 @@ type CardProps = {
   name: string;
   type: CardType;
   isBookmark: boolean;
-  toBookmarks: () => void;
 };
 
-export default CardProps;
+export default Card;

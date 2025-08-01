@@ -1,7 +1,6 @@
-import CardType from './cardType';
+import CardType from '../../../models/cardType';
 
-interface Card {
-  id: number;
+type CardProps = {
   isPremium: boolean;
   src: string;
   price: number;
@@ -9,6 +8,7 @@ interface Card {
   name: string;
   type: CardType;
   isBookmark: boolean;
-}
+  toBookmarks: () => void;
+};
 
-export default Card;
+export default CardProps;
