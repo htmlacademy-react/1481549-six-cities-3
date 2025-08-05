@@ -1,8 +1,8 @@
 import CardComponent from '../../components/common/card/card';
 import Header from '../../components/common/header/header';
-import Locations from '../../components/main/locations/locations';
-import Map from '../../components/main/map/map';
-import Sorting from '../../components/main/sorting/sorting';
+import Locations from './components/locations/locations';
+import Map from './components/map/map';
+import Sorting from './components/sorting/sorting';
 import MainPageProps from './main-page.props';
 
 import { cards } from '../../data/mocks/cards';
@@ -10,7 +10,7 @@ import { cards } from '../../data/mocks/cards';
 export default function MainPage(props: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
-      <Header />
+      <Header showNav />
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">

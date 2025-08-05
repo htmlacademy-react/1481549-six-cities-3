@@ -1,0 +1,21 @@
+import Header from '../../components/common/header/header';
+import Content from './components/content/content';
+import Gallery from './components/gallery/gallery';
+import Map from './components/map/map';
+import Places from './components/places/places';
+
+export default function Offer(): JSX.Element {
+  return (
+    <div className="page">
+      <Header showNav />
+      <section className="offer">
+        <Gallery />
+        <Content />
+        <Map />
+      </section>
+      <div className="container">
+        <Places />
+      </div>
+    </div>
+  );
+}

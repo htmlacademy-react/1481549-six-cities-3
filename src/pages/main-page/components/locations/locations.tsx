@@ -1,11 +1,4 @@
-const cities: string[] = [
-  'Paris',
-  'Cologne',
-  'Brussels',
-  'Amsterdam',
-  'Hamburg',
-  'Dusseldorf',
-];
+import { cities } from '../../../../data/const';
 
 export default function Locations(): JSX.Element {
   return (
