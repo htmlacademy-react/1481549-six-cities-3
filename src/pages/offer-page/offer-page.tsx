@@ -4,7 +4,7 @@ import Gallery from './components/gallery/gallery';
 import Map from './components/map/map';
 import Places from './components/places/places';
 
-export default function Offer(): JSX.Element {
+export default function OfferPage(): JSX.Element {
   return (
     <div className="page">
       <Header showNav />

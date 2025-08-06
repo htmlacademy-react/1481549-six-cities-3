@@ -1,11 +1,8 @@
-import CardComponent from '../../components/common/card/card';
 import Header from '../../components/common/header/header';
 import Locations from './components/locations/locations';
 import Map from './components/map/map';
-import Sorting from './components/sorting/sorting';
 import MainPageProps from './main-page.props';
-
-import { cards } from '../../data/mocks/cards';
+import Places from './components/places/places';
 
 export default function MainPage(props: MainPageProps): JSX.Element {
   return (
@@ -18,22 +15,7 @@ export default function MainPage(props: MainPageProps): JSX.Element {
         </div>
         <div className="cities">
           <div className="cities__places-container container">
-            <section className="cities__places places">
-              <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">
-                {props.placesCount} places to stay in Amsterdam
-              </b>
-              <Sorting />
-              <div className="cities__places-list places__list tabs__content">
-                {cards.map((card) => (
-                  <CardComponent
-                    key={card.id}
-                    {...card}
-                    toBookmarks={() => {}} // заглушка
-                  />
-                ))}
-              </div>
-            </section>
+            <Places placesCount={props.placesCount} />
             <div className="cities__right-section">
               <Map />
             </div>
