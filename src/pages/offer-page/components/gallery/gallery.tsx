@@ -1,4 +1,4 @@
-import gallery from '../../../../data/mocks/gallery';
+import gallery from '@data/mocks/gallery';
 
 export default function Gallery(): JSX.Element {
   return (

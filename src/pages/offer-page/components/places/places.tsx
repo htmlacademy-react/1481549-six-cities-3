@@ -1,5 +1,6 @@
-import { places } from '../../../../data/mocks/places';
-import CardComponent from '../../../../components/card/card';
+// import { places } from '../../../../data/mocks/places';
+import CardComponent from '@components/card/card';
+import { places } from '@data/mocks/places';
 
 export default function Places(): JSX.Element {
   return (

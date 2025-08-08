@@ -1,7 +1,6 @@
+import { cards } from '@data/mocks/cards';
 import Sorting from '../sorting/sorting';
-import CardComponent from '../../../../components/card/card';
-
-import { cards } from '../../../../data/mocks/cards';
+import CardComponent from '@components/card/card';
 
 type PlacesProps = {
   placesCount: number;

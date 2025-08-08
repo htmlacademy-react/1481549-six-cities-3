@@ -1,4 +1,4 @@
-import reviews from '../../../../data/mocks/reviews';
+import reviews from '@data/mocks/reviews';
 import Form from './form';
 import Review from './review';
 

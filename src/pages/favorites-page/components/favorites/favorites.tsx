@@ -1,4 +1,4 @@
-import { favorites } from '../../../../data/mocks/favorites';
+import { favorites } from '@data/mocks/favorites';
 import FavoriteItem from '../favorite-item/favorite-item';
 
 export default function Favorites(): JSX.Element {

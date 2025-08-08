@@ -1,4 +1,4 @@
-import { cities } from '../../../../data/const';
+import { cities } from '@data/const';
 
 export default function Locations(): JSX.Element {
   return (

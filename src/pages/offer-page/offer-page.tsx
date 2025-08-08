@@ -1,4 +1,4 @@
-import Header from '../../components/header/header';
+import Header from '@components/header/header';
 import Content from './components/content/content';
 import Gallery from './components/gallery/gallery';
 import Map from './components/map/map';

@@ -1,4 +1,4 @@
-import { sorting } from '../../../../data/const';
+import { sorting } from '@data/const';
 
 export default function Sorting(): JSX.Element {
   return (

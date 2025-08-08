@@ -1,4 +1,4 @@
-import offer from '../../../../data/mocks/offer';
+import offer from '@data/mocks/offer';
 import Reviews from '../reviews/reviews';
 
 export default function Content(): JSX.Element {

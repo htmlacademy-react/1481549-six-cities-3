@@ -1,4 +1,4 @@
-import Header from '../../components/header/header';
+import Header from '@components/header/header';
 import Locations from './components/locations/locations';
 import Map from './components/map/map';
 import Places from './components/places/places';
