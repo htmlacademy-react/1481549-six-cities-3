@@ -1,21 +1,29 @@
 import CardType from './cardType';
+import Location from './location';
 
 type Offer = {
-  isPremium: boolean;
-  name: string;
-  rating: number;
-  features: {
-    entire: CardType;
-    bedrooms: number;
-    adults: number;
-  };
+  id: number;
+  title: string;
+  type: CardType;
   price: number;
-  options: string[];
-  src: string;
-  host: string;
-  hostStatus: string;
-  description1: string;
-  description2: string;
+  city: {
+    name: string;
+    location: Location;
+  };
+  location: Location;
+  isFavorite: boolean;
+  isPremium: boolean;
+  rating: number;
+  description: string;
+  bedrooms: number;
+  goods: string[];
+  host: {
+    name: string;
+    avatarUrl: string;
+    isPro: boolean;
+  };
+  images: string[];
+  maxAdults: number;
 };
 
 export default Offer;

@@ -5,7 +5,7 @@ type CardProps = {
   src: string;
   price: number;
   // rating: number;
-  name: string;
+  title: string;
   type: CardType;
   // isBookmark: boolean;
   // toBookmarks: () => void;
@@ -15,7 +15,7 @@ export default function Card({
   isPremium,
   src,
   price,
-  name,
+  title,
   type,
 }: CardProps): JSX.Element {
   return (
@@ -56,7 +56,7 @@ export default function Card({
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{name}</a>
+          <a href="#">{title}</a>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

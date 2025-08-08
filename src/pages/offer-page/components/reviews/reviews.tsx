@@ -13,11 +13,11 @@ export default function Reviews(): JSX.Element {
         {reviews.map((review) => (
           <Review
             key={review.id}
-            src={review.src}
-            userName={review.userName}
-            text={review.text}
-            dateString={review.dateString}
-            datetime={review.datetime}
+            userName={review.user.name}
+            userImage={review.user.avatarUrl}
+            comment={review.comment}
+            rating={review.rating}
+            date={review.date}
           />
         ))}
       </ul>

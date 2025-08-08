@@ -1,14 +1,20 @@
 import CardType from './cardType';
+import Location from './location';
 
 type Card = {
   id: number;
-  isPremium: boolean;
-  src: string;
-  price: number;
-  rating: number;
-  name: string;
+  title: string;
   type: CardType;
-  isBookmark: boolean;
+  price: number;
+  city: {
+    name: string;
+    location: Location;
+  };
+  location: Location;
+  isFavorite: boolean;
+  isPremium: boolean;
+  rating: number;
+  previewImage: string;
 };
 
 export default Card;

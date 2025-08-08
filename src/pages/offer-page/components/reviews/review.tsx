@@ -1,19 +1,18 @@
 type ReviewProps = {
   // id: number;
-  src: string;
   userName: string;
-  // rating: number;
-  text: string;
-  dateString: string;
-  datetime: string;
+  userImage: string;
+  rating: number;
+  comment: string;
+  date: Date;
 };
 
 export default function Review({
-  src,
   userName,
-  text,
-  dateString,
-  datetime,
+  userImage,
+  rating,
+  comment,
+  date,
 }: ReviewProps): JSX.Element {
   return (
     <li className="reviews__item">
@@ -21,7 +20,7 @@ export default function Review({
         <div className="reviews__avatar-wrapper user__avatar-wrapper">
           <img
             className="reviews__avatar user__avatar"
-            src={src}
+            src={userImage}
             width="54"
             height="54"
             alt="Reviews avatar"
@@ -33,12 +32,12 @@ export default function Review({
         <div className="reviews__rating rating">
           <div className="reviews__stars rating__stars">
             <span style={{ width: '80%' }}></span>
-            <span className="visually-hidden">Rating</span>
+            <span className="visually-hidden">Rating {rating}</span>
           </div>
         </div>
-        <p className="reviews__text">{text}</p>
-        <time className="reviews__time" dateTime={datetime}>
-          {dateString}
+        <p className="reviews__text">{comment}</p>
+        <time className="reviews__time" dateTime={date.toString()}>
+          {date.toDateString()}
         </time>
       </div>
     </li>

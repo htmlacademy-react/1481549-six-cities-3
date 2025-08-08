@@ -1,11 +1,13 @@
 type Review = {
   id: number;
-  src: string;
-  userName: string;
+  date: Date;
+  user: {
+    name: string;
+    avatarUrl: string;
+    isPro: boolean;
+  };
+  comment: string;
   rating: number;
-  text: string;
-  dateString: string;
-  datetime: string;
 };
 
 export default Review;

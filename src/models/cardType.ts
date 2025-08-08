@@ -1,8 +1,3 @@
-enum CardType {
-  Apartment = 'Apartment',
-  Room = 'Room',
-  House = 'House',
-  Hotel = 'Hotel',
-}
+type CardType = 'apartment' | 'room' | 'house' | 'hotel';
 
 export default CardType;

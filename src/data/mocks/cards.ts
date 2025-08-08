@@ -1,55 +1,27 @@
 import Card from '../../models/card';
-import CardType from '../../models/cardType';
 
 export const cards: Card[] = [
   {
     id: 0,
-    isPremium: true,
-    src: 'img/apartment-01.jpg',
+    previewImage: 'img/apartment-01.jpg',
     price: 120,
-    isBookmark: false,
     rating: 5,
-    name: 'Beautiful &amp; luxurious apartment at great location',
-    type: CardType.Apartment,
-  },
-  {
-    id: 1,
-    isPremium: false,
-    src: 'img/room.jpg',
-    price: 80,
-    isBookmark: false,
-    rating: 5,
-    name: 'Wood and stone place',
-    type: CardType.Room,
-  },
-  {
-    id: 2,
-    isPremium: false,
-    src: 'img/apartment-02.jpg',
-    price: 132,
-    isBookmark: false,
-    rating: 5,
-    name: 'Canal View Prinsengracht',
-    type: CardType.Apartment,
-  },
-  {
-    id: 3,
+    title: 'Beautiful &amp; luxurious apartment at great location',
+    type: 'apartment',
     isPremium: true,
-    src: 'img/apartment-03.jpg',
-    price: 180,
-    isBookmark: false,
-    rating: 5,
-    name: 'Nice, cozy, warm big bed apartment',
-    type: CardType.Apartment,
-  },
-  {
-    id: 4,
-    isPremium: false,
-    src: 'img/room.jpg',
-    price: 80,
-    isBookmark: false,
-    rating: 5,
-    name: 'Wood and stone place',
-    type: CardType.Room,
+    isFavorite: false,
+    location: {
+      latitude: 0,
+      longitude: 1,
+      zoom: 8,
+    },
+    city: {
+      name: 'Test',
+      location: {
+        latitude: 0,
+        longitude: 1,
+        zoom: 8,
+      },
+    },
   },
 ];

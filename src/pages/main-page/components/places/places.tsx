@@ -18,9 +18,9 @@ export default function Places({ placesCount }: PlacesProps): JSX.Element {
           <CardComponent
             key={card.id}
             isPremium={card.isPremium}
-            src={card.src}
+            src={card.previewImage}
             price={card.price}
-            name={card.name}
+            title={card.title}
             type={card.type}
           />
         ))}

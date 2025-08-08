@@ -11,7 +11,7 @@ export default function Content(): JSX.Element {
           </div>
         )}
         <div className="offer__name-wrapper">
-          <h1 className="offer__name">{offer.name}</h1>
+          <h1 className="offer__name">{offer.title}</h1>
           <button className="offer__bookmark-button button" type="button">
             <svg className="offer__bookmark-icon" width="31" height="33">
               <use xlinkHref="#icon-bookmark"></use>
@@ -29,14 +29,14 @@ export default function Content(): JSX.Element {
           </span>
         </div>
         <ul className="offer__features">
-          <li className="offer__feature offer__feature--entire">
+          {/* <li className="offer__feature offer__feature--entire">
             {offer.features.entire}
-          </li>
+          </li> */}
           <li className="offer__feature offer__feature--bedrooms">
-            {offer.features.bedrooms} Bedrooms
+            {offer.bedrooms} Bedrooms
           </li>
           <li className="offer__feature offer__feature--adults">
-            Max {offer.features.adults} adults
+            Max {offer.maxAdults} adults
           </li>
         </ul>
         <div className="offer__price">
@@ -46,7 +46,7 @@ export default function Content(): JSX.Element {
         <div className="offer__inside">
           <h2 className="offer__inside-title">What&apos;s inside</h2>
           <ul className="offer__inside-list">
-            {offer.options.map((opt) => (
+            {offer.goods.map((opt) => (
               <li className="offer__inside-item" key={opt}>
                 {opt}
               </li>
@@ -59,18 +59,17 @@ export default function Content(): JSX.Element {
             <div className="offer__avatar-wrapper offer__avatar-wrapper--pro user__avatar-wrapper">
               <img
                 className="offer__avatar user__avatar"
-                src={offer.src}
+                src={offer.host.avatarUrl}
                 width="74"
                 height="74"
                 alt="Host avatar"
               />
             </div>
-            <span className="offer__user-name">{offer.host}</span>
-            <span className="offer__user-status">{offer.hostStatus}</span>
+            <span className="offer__user-name">{offer.host.name}</span>
+            <span className="offer__user-status">{offer.host.isPro}</span>
           </div>
           <div className="offer__description">
-            <p className="offer__text">{offer.description1}</p>
-            <p className="offer__text">{offer.description2}</p>
+            <p className="offer__text">{offer.description}</p>
           </div>
         </div>
         <Reviews />
