@@ -2,7 +2,10 @@ import Sorting from '../sorting/sorting';
 import CardComponent from '../../../../components/common/card/card';
 
 import { cards } from '../../../../data/mocks/cards';
-import PlacesProps from './places.props';
+
+type PlacesProps = {
+  placesCount: number;
+};
 
 export default function Places(props: PlacesProps): JSX.Element {
   return (
@@ -14,11 +17,7 @@ export default function Places(props: PlacesProps): JSX.Element {
       <Sorting />
       <div className="cities__places-list places__list tabs__content">
         {cards.map((card) => (
-          <CardComponent
-            key={card.id}
-            {...card}
-            toBookmarks={() => {}} // заглушка
-          />
+          <CardComponent key={card.id} {...card} />
         ))}
       </div>
     </section>

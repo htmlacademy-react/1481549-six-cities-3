@@ -1,4 +1,12 @@
-import ReviewProps from './review.props';
+type ReviewProps = {
+  // id: number;
+  src: string;
+  userName: string;
+  // rating: number;
+  text: string;
+  dateString: string;
+  datetime: string;
+};
 
 export default function Review(props: ReviewProps): JSX.Element {
   return (

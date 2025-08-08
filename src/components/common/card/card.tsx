@@ -1,4 +1,15 @@
-import CardProps from './card.props';
+import CardType from '../../../models/cardType';
+
+type CardProps = {
+  isPremium: boolean;
+  src: string;
+  price: number;
+  // rating: number;
+  name: string;
+  type: CardType;
+  // isBookmark: boolean;
+  // toBookmarks: () => void;
+};
 
 export default function Card(props: CardProps): JSX.Element {
   const { isPremium, src, price, name, type } = props;

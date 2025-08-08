@@ -1,4 +1,6 @@
-import CityProps from './city.props';
+type CityProps = {
+  city: string;
+};
 
 export default function City(props: CityProps): JSX.Element {
   return (

@@ -1,4 +1,6 @@
-import HeaderProps from './header.props';
+type HeaderProps = {
+  showNav: boolean;
+};
 
 export default function Header(props: HeaderProps): JSX.Element {
   return (

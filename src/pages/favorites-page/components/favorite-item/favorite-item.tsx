@@ -1,6 +1,12 @@
-import Card from '../../../../components/common/card/card';
+// import Card from '../../../../models/card';
+import CardComponent from '../../../../components/common/card/card';
+import Card from '../../../../models/card';
 import City from '../city/city';
-import FavoriteItemProps from './favorite-item.props';
+
+type FavoriteItemProps = {
+  city: string;
+  cards: Card[];
+};
 
 export default function FavoriteItem(props: FavoriteItemProps): JSX.Element {
   const { city, cards } = props;
@@ -9,7 +15,7 @@ export default function FavoriteItem(props: FavoriteItemProps): JSX.Element {
       <City city={city} />
       <div className="favorites__places">
         {cards.map((card) => (
-          <Card key={card.id} {...card} toBookmarks={() => {}} />
+          <CardComponent key={card.id} {...card} />
         ))}
       </div>
     </li>
