@@ -17,7 +17,14 @@ export default function FavoriteItem({
       <City city={city} />
       <div className="favorites__places">
         {cards.map((card) => (
-          <CardComponent key={card.id} {...card} />
+          <CardComponent
+            key={card.id}
+            isPremium={card.isPremium}
+            src={card.src}
+            price={card.price}
+            name={card.name}
+            type={card.type}
+          />
         ))}
       </div>
     </li>

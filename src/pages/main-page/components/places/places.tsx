@@ -15,7 +15,14 @@ export default function Places({ placesCount }: PlacesProps): JSX.Element {
       <Sorting />
       <div className="cities__places-list places__list tabs__content">
         {cards.map((card) => (
-          <CardComponent key={card.id} {...card} />
+          <CardComponent
+            key={card.id}
+            isPremium={card.isPremium}
+            src={card.src}
+            price={card.price}
+            name={card.name}
+            type={card.type}
+          />
         ))}
       </div>
     </section>

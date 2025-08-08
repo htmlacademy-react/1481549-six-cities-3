@@ -11,7 +11,14 @@ export default function Reviews(): JSX.Element {
       </h2>
       <ul className="reviews__list">
         {reviews.map((review) => (
-          <Review key={review.id} {...review} />
+          <Review
+            key={review.id}
+            src={review.src}
+            userName={review.userName}
+            text={review.text}
+            dateString={review.dateString}
+            datetime={review.datetime}
+          />
         ))}
       </ul>
       <Form />
