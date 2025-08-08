@@ -2,7 +2,7 @@ type HeaderProps = {
   showNav: boolean;
 };
 
-export default function Header(props: HeaderProps): JSX.Element {
+export default function Header({ showNav }: HeaderProps): JSX.Element {
   return (
     <header className="header">
       <div className="container">
@@ -18,7 +18,7 @@ export default function Header(props: HeaderProps): JSX.Element {
               />
             </a>
           </div>
-          {props.showNav && (
+          {showNav && (
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">

@@ -1,10 +1,13 @@
 import Header from '../../components/header/header';
 import Locations from './components/locations/locations';
 import Map from './components/map/map';
-import MainPageProps from './main-page.props';
 import Places from './components/places/places';
 
-export default function MainPage(props: MainPageProps): JSX.Element {
+type MainPageProps = {
+  placesCount: number;
+};
+
+export default function MainPage({ placesCount }: MainPageProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <Header showNav />
@@ -15,7 +18,7 @@ export default function MainPage(props: MainPageProps): JSX.Element {
         </div>
         <div className="cities">
           <div className="cities__places-container container">
-            <Places placesCount={props.placesCount} />
+            <Places placesCount={placesCount} />
             <div className="cities__right-section">
               <Map />
             </div>

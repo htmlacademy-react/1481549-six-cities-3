@@ -8,8 +8,10 @@ type FavoriteItemProps = {
   cards: Card[];
 };
 
-export default function FavoriteItem(props: FavoriteItemProps): JSX.Element {
-  const { city, cards } = props;
+export default function FavoriteItem({
+  city,
+  cards,
+}: FavoriteItemProps): JSX.Element {
   return (
     <li className="favorites__locations-items">
       <City city={city} />

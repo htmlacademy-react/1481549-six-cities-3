@@ -11,8 +11,13 @@ type CardProps = {
   // toBookmarks: () => void;
 };
 
-export default function Card(props: CardProps): JSX.Element {
-  const { isPremium, src, price, name, type } = props;
+export default function Card({
+  isPremium,
+  src,
+  price,
+  name,
+  type,
+}: CardProps): JSX.Element {
   return (
     <article className="cities__card place-card">
       {isPremium && (
