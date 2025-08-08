@@ -1,4 +1,4 @@
-import Header from '../../components/common/header/header';
+import Header from '../../components/header/header';
 import Locations from './components/locations/locations';
 import Login from './components/login/login';
 

@@ -1,5 +1,5 @@
 // import Card from '../../../../models/card';
-import CardComponent from '../../../../components/common/card/card';
+import CardComponent from '../../../../components/card/card';
 import Card from '../../../../models/card';
 import City from '../city/city';
 

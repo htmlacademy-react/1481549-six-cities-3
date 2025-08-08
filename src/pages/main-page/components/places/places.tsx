@@ -1,5 +1,5 @@
 import Sorting from '../sorting/sorting';
-import CardComponent from '../../../../components/common/card/card';
+import CardComponent from '../../../../components/card/card';
 
 import { cards } from '../../../../data/mocks/cards';
 

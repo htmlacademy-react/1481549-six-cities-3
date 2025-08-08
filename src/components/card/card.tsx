@@ -1,4 +1,4 @@
-import CardType from '../../../models/cardType';
+import CardType from '../../models/cardType';
 
 type CardProps = {
   isPremium: boolean;

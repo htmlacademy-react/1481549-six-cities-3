@@ -1,5 +1,5 @@
-import Footer from '../../components/common/footer/footer';
-import Header from '../../components/common/header/header';
+import Footer from '../../components/footer/footer';
+import Header from '../../components/header/header';
 import Favorites from './components/favorites/favorites';
 
 export default function FavoritesPage(): JSX.Element {
