@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
+import { Routes } from '../../routes/routes';
 
 export default function Logo(): JSX.Element {
   return (
-    <Link to="/" className="header__logo-link header__logo-link--active">
+    <Link
+      to={Routes.Main}
+      className="header__logo-link header__logo-link--active"
+    >
       <img
         className="header__logo"
         src="img/logo.svg"

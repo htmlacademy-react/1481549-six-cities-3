@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from './logo';
+import { Routes } from '../../routes/routes';
 
 type HeaderProps = {
   showNav: boolean;
@@ -19,7 +20,7 @@ export default function Header({ showNav }: HeaderProps): JSX.Element {
                 <li className="header__nav-item user">
                   <Link
                     className="header__nav-link header__nav-link--profile"
-                    to="/favorites"
+                    to={Routes.Favorite}
                   >
                     <div className="header__avatar-wrapper user__avatar-wrapper"></div>
                     <span className="header__user-name user__name">
@@ -29,7 +30,7 @@ export default function Header({ showNav }: HeaderProps): JSX.Element {
                   </Link>
                 </li>
                 <li className="header__nav-item">
-                  <Link to="/login" className="header__nav-link">
+                  <Link to={Routes.Login} className="header__nav-link">
                     <span className="header__signout">Sign out</span>
                   </Link>
                 </li>
