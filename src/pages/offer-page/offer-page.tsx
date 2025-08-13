@@ -5,7 +5,7 @@ import Places from './components/places/places';
 
 export default function OfferPage(): JSX.Element {
   return (
-    <>
+    <main className="page__main page__main--offer">
       <section className="offer">
         <Gallery />
         <Content />
@@ -14,6 +14,6 @@ export default function OfferPage(): JSX.Element {
       <div className="container">
         <Places />
       </div>
-    </>
+    </main>
   );
 }

@@ -5,7 +5,7 @@ import Login from './components/login/login';
 export default function LoginPage(): JSX.Element {
   return (
     <div className="page page--gray page--login">
-      <Header showNav={false} />
+      <Header isAuth={false} />
       <main className="page__main page__main--login">
         <div className="page__login-container container">
           <Login />

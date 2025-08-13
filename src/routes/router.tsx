@@ -34,12 +34,12 @@ const router = createBrowserRouter([
         element: <OfferPage />,
         // lazy: () => import('@pages/offer-page/offer-page'),
       },
+      {
+        path: Routes.Login,
+        element: <LoginPage />,
+        // lazy: () => import('@pages/login-page/login-page'),
+      },
     ],
-  },
-  {
-    path: Routes.Login,
-    element: <LoginPage />,
-    // lazy: () => import('@pages/login-page/login-page'),
   },
   {
     path: Routes.Error,
