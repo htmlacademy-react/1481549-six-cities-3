@@ -16,6 +16,7 @@ export default function Places({ placesCount }: PlacesProps): JSX.Element {
         {cards.map((card) => (
           <CardComponent
             key={card.id}
+            id={card.id}
             isPremium={card.isPremium}
             src={card.previewImage}
             price={card.price}

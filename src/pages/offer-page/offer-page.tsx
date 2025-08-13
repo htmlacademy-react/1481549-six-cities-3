@@ -1,4 +1,3 @@
-import Header from '@components/header/header';
 import Content from './components/content/content';
 import Gallery from './components/gallery/gallery';
 import Map from './components/map/map';
@@ -6,8 +5,7 @@ import Places from './components/places/places';
 
 export default function OfferPage(): JSX.Element {
   return (
-    <div className="page">
-      <Header showNav />
+    <>
       <section className="offer">
         <Gallery />
         <Content />
@@ -16,6 +14,6 @@ export default function OfferPage(): JSX.Element {
       <div className="container">
         <Places />
       </div>
-    </div>
+    </>
   );
 }
