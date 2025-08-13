@@ -6,6 +6,7 @@ import LoginPage from '../pages/login-page/login-page';
 import FavoritesPage from '../pages/favorites-page/favorites-page';
 import OfferPage from '../pages/offer-page/offer-page';
 import Layout from '@components/layout/page-layout';
+import ErrorPage from '../pages/error-page/error-page';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: '/login',
     element: <LoginPage />,
+  },
+  {
+    path: '/*',
+    element: <ErrorPage />,
   },
 ]);
 
