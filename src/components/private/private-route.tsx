@@ -1,13 +1,24 @@
+import getAuthorizationStatus from '@data/mocks/auth';
 import { Navigate } from 'react-router-dom';
 import { Routes } from '../../routes/routes';
+import { AuthorizationStatus } from '@data/const';
 
 type PrivateRouteProps = {
   children: JSX.Element;
+  isReverse?: boolean;
 };
 
 export default function PrivateRoute({
+  isReverse,
   children,
 }: PrivateRouteProps): JSX.Element {
-  const isAuth = true;
-  return isAuth ? children : <Navigate to={Routes.Login} />;
+  const isAuth = getAuthorizationStatus();
+  const condition = isReverse
+    ? isAuth === AuthorizationStatus.NotAuth
+    : isAuth === AuthorizationStatus.Auth;
+  return condition ? (
+    children
+  ) : (
+    <Navigate to={isReverse ? Routes.Main : Routes.Login} />
+  );
 }

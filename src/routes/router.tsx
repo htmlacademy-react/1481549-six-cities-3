@@ -36,7 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: Routes.Login,
-        element: <LoginPage />,
+        element: (
+          <PrivateRoute isReverse>
+            <LoginPage />
+          </PrivateRoute>
+        ),
         // lazy: () => import('@pages/login-page/login-page'),
       },
     ],
