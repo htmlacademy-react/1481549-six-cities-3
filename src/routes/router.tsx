@@ -7,6 +7,7 @@ import FavoritesPage from '../pages/favorites-page/favorites-page';
 import OfferPage from '../pages/offer-page/offer-page';
 import Layout from '@components/layout/page-layout';
 import ErrorPage from '../pages/error-page/error-page';
+import PrivateRoute from '@components/private/private-route';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/favorites',
-        element: <FavoritesPage />,
+        element: (
+          <PrivateRoute>
+            <FavoritesPage />
+          </PrivateRoute>
+        ),
       },
       {
         path: '/offer/:id',
