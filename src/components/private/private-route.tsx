@@ -1,6 +1,6 @@
 import getAuthorizationStatus from '@data/mocks/auth';
 import { Navigate } from 'react-router-dom';
-import { Routes } from '../../routes/routes';
+import { Routes } from '../../router/routes';
 import { AuthorizationStatus } from '@data/const';
 
 type PrivateRouteProps = {

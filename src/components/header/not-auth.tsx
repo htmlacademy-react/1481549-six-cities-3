@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Routes } from '../../routes/routes';
+import { Routes } from '../../router/routes';
 
 export default function NotAuth(): JSX.Element {
   return (

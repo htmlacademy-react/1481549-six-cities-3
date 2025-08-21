@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
-import { Routes } from '../../routes/routes';
+import { Routes } from '../../router/routes';
 
 export default function Logo(): JSX.Element {
   const { pathname } = useLocation();

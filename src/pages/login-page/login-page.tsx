@@ -1,10 +1,9 @@
-import Header from '@components/header/header';
 import Locations from './components/locations/locations';
 import Login from './components/login/login';
 import getAuthorizationStatus from '@data/mocks/auth';
 import { AuthorizationStatus } from '@data/const';
 import { Navigate } from 'react-router-dom';
-import { Routes } from '../../routes/routes';
+import { Routes } from '../../router/routes';
 
 export default function LoginPage(): JSX.Element {
   const authorizationStatus = getAuthorizationStatus();
