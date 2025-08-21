@@ -3,5 +3,5 @@ export const Routes = {
   Login: '/login',
   Favorite: '/favorite',
   Offer: '/offer/:id',
-  Error: '/*',
+  NotFound: '/*',
 } as const;

@@ -6,7 +6,7 @@ import PrivateRoute from '@components/private/private-route';
 import FavoritesPage from '@pages/favorites-page/favorites-page';
 import MainPage from '@pages/main-page/main-page';
 import OfferPage from '@pages/offer-page/offer-page';
-import ErrorPage from '@pages/error-page/error-page';
+import NotFoundPage from '@pages/not-found-page/not-found-page';
 import LoginPage from '@pages/login-page/login-page';
 
 import { Routes } from './routes';
@@ -50,10 +50,10 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: Routes.Error,
+    path: Routes.NotFound,
     element: (
       <PageLayout>
-        <ErrorPage />
+        <NotFoundPage />
       </PageLayout>
     ),
   },

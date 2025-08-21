@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Routes } from '../../router/routes';
 
-export default function ErrorPage(): JSX.Element {
+export default function NotFoundPage(): JSX.Element {
   return (
     <div className="container">
       <div className="error">

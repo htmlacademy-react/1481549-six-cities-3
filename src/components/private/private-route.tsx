@@ -13,9 +13,11 @@ export default function PrivateRoute({
   children,
 }: PrivateRouteProps): JSX.Element {
   const isAuth = getAuthorizationStatus();
+
   const condition = isReverse
     ? isAuth === AuthorizationStatus.NotAuth
     : isAuth === AuthorizationStatus.Auth;
+
   return condition ? (
     children
   ) : (
