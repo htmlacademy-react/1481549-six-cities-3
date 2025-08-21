@@ -14,8 +14,9 @@ export default function Layout(): JSX.Element {
   return (
     <div
       className={cn('page', {
-        ['page__gray']: pathname === Routes.Main,
-        ['page__main']: pathname === Routes.Main,
+        ['page--gray']: pathname === Routes.Main,
+        ['page--main']: pathname === Routes.Main,
+        ['page--login']: pathname === Routes.Login,
       })}
     >
       {pathname !== Routes.Login && (

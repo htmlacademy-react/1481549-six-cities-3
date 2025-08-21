@@ -10,15 +10,12 @@ export default function LoginPage(): JSX.Element {
   const authorizationStatus = getAuthorizationStatus();
 
   return authorizationStatus === AuthorizationStatus.NotAuth ? (
-    <div className="page page--gray page--login">
-      <Header isAuth={false} />
-      <main className="page__main page__main--login">
-        <div className="page__login-container container">
-          <Login />
-          <Locations />
-        </div>
-      </main>
-    </div>
+    <main className="page__main page__main--login">
+      <div className="page__login-container container">
+        <Login />
+        <Locations />
+      </div>
+    </main>
   ) : (
     <Navigate to={Routes.Main} />
   );
