@@ -1,0 +1,18 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.message {
+  font-size: 44px;
+  text-align: center;
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

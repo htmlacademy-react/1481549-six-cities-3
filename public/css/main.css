@@ -2004,22 +2004,3 @@ img {
 }
 
 /*# sourceMappingURL=main.css.map */
-
-.error {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-}
-
-.error__message {
-  font-size: 44px;
-  text-align: center;
-}
-
-.error__back {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
