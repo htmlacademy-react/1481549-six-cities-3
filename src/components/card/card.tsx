@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
 import CardType from '../../models/cardType';
 
 type CardProps = {
+  id: number;
   isPremium: boolean;
   src: string;
   price: number;
@@ -12,6 +14,7 @@ type CardProps = {
 };
 
 export default function Card({
+  id,
   isPremium,
   src,
   price,
@@ -56,7 +59,7 @@ export default function Card({
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={`/offer/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

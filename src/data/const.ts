@@ -18,4 +18,10 @@ const sorting: string[] = [
   'Top rated first',
 ];
 
-export { Settings, cities, sorting };
+const AuthorizationStatus = {
+  Auth: 'Auth',
+  NotAuth: 'NotAuth',
+  Unknown: 'Unknown',
+} as const;
+
+export { Settings, AuthorizationStatus, cities, sorting };

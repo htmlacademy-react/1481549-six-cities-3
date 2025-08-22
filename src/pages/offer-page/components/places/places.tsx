@@ -10,6 +10,7 @@ export default function Places(): JSX.Element {
         {places.map((card) => (
           <CardComponent
             key={card.id}
+            id={card.id}
             isPremium={card.isPremium}
             src={card.previewImage}
             price={card.price}

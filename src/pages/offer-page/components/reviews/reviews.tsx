@@ -1,8 +1,11 @@
 import reviews from '@data/mocks/reviews';
 import Form from './form';
 import Review from './review';
+import getAuthorizationStatus from '@data/mocks/auth';
+import { AuthorizationStatus } from '@data/const';
 
 export default function Reviews(): JSX.Element {
+  const authorizationStatus = getAuthorizationStatus();
   return (
     <section className="offer__reviews reviews">
       <h2 className="reviews__title">
@@ -21,7 +24,7 @@ export default function Reviews(): JSX.Element {
           />
         ))}
       </ul>
-      <Form />
+      {authorizationStatus === AuthorizationStatus.Auth && <Form />}
     </section>
   );
 }
