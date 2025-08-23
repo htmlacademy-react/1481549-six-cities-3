@@ -10,6 +10,7 @@ import NotFoundPage from '@pages/not-found-page/not-found-page';
 import LoginPage from '@pages/login-page/login-page';
 
 import { Routes } from './routes';
+import { cards } from '@data/mocks/cards';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     index: true,
     element: (
       <PageLayout classNames={['page--gray', 'page--main']}>
-        <MainPage />
+        <MainPage cards={cards} />
       </PageLayout>
     ),
   },
