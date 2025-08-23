@@ -5,11 +5,13 @@ import CardComponent from '@components/card/card';
 type PlacesProps = {
   cards: Card[];
   placesCount: number;
+  onHover: (id: number) => void;
 };
 
 export default function Places({
   placesCount,
   cards,
+  onHover,
 }: PlacesProps): JSX.Element {
   return (
     <section className="cities__places places">
@@ -26,6 +28,7 @@ export default function Places({
             price={card.price}
             title={card.title}
             type={card.type}
+            onHover={() => onHover(card.id)}
           />
         ))}
       </div>
