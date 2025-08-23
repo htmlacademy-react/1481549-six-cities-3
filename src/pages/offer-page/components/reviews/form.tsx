@@ -1,4 +1,23 @@
+import { useImmer } from 'use-immer';
+
 export default function Form() {
+  const [state, setState] = useImmer({
+    rating: 0,
+    comment: '',
+  });
+
+  const onRatingChange = (rating: number) => {
+    setState((draft) => {
+      draft.rating = rating;
+    });
+  };
+
+  const onCommentChange = (value: string) => {
+    setState((draft) => {
+      draft.comment = value;
+    });
+  };
+
   return (
     <form className="reviews__form form" action="#" method="post">
       <label className="reviews__label form__label" htmlFor="review">
@@ -11,6 +30,8 @@ export default function Form() {
           value="5"
           id="5-stars"
           type="radio"
+          checked={state.rating === 5}
+          onChange={() => onRatingChange(5)}
         />
         <label
           htmlFor="5-stars"
@@ -28,6 +49,8 @@ export default function Form() {
           value="4"
           id="4-stars"
           type="radio"
+          checked={state.rating === 4}
+          onChange={() => onRatingChange(4)}
         />
         <label
           htmlFor="4-stars"
@@ -45,6 +68,8 @@ export default function Form() {
           value="3"
           id="3-stars"
           type="radio"
+          checked={state.rating === 3}
+          onChange={() => onRatingChange(3)}
         />
         <label
           htmlFor="3-stars"
@@ -62,6 +87,8 @@ export default function Form() {
           value="2"
           id="2-stars"
           type="radio"
+          checked={state.rating === 2}
+          onChange={() => onRatingChange(2)}
         />
         <label
           htmlFor="2-stars"
@@ -79,6 +106,8 @@ export default function Form() {
           value="1"
           id="1-star"
           type="radio"
+          checked={state.rating === 1}
+          onChange={() => onRatingChange(1)}
         />
         <label
           htmlFor="1-star"
@@ -95,6 +124,8 @@ export default function Form() {
         id="review"
         name="review"
         placeholder="Tell how was your stay, what you like and what can be improved"
+        value={state.comment}
+        onChange={(e) => onCommentChange(e.target.value)}
       />
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
