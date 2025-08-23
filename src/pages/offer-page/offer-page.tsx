@@ -11,20 +11,18 @@ export default function OfferPage() {
 
   const offer = fullOffers.find((o) => o.id === Number(id));
 
-  if (!offer) {
-    return <Navigate to={Routes.NotFound} />;
-  } else {
-    return (
-      <main className="page__main page__main--offer">
-        <section className="offer">
-          <Gallery />
-          <Content offer={offer} />
-          <Map />
-        </section>
-        <div className="container">
-          <Places />
-        </div>
-      </main>
-    );
-  }
+  return offer ? (
+    <main className="page__main page__main--offer">
+      <section className="offer">
+        <Gallery />
+        <Content offer={offer} />
+        <Map />
+      </section>
+      <div className="container">
+        <Places />
+      </div>
+    </main>
+  ) : (
+    <Navigate to={Routes.NotFound} />
+  );
 }

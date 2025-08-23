@@ -11,6 +11,7 @@ import LoginPage from '@pages/login-page/login-page';
 
 import { Routes } from './routes';
 import { cards } from '@data/mocks/cards';
+import { favorites } from '@data/mocks/favorites';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <PageLayout withFooter>
-          <FavoritesPage />
+          <FavoritesPage favorites={favorites} />
         </PageLayout>
       </PrivateRoute>
     ),
