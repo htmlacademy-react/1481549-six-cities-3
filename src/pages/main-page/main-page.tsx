@@ -10,7 +10,7 @@ type MainPageProps = {
 
 export default function MainPage({ cards }: MainPageProps) {
   /* eslint-disable-next-line */
-  const [activeCardId, setActiveCardId] = useState(0);
+  const [_, setActiveCardId] = useState(0);
 
   return (
     <main className="page__main page__main--index">
