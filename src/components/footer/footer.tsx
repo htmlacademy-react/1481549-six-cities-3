@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Routes } from '../../router/routes';
+import { AppRoutes } from '../../router/routes';
 
 export default function Footer(): JSX.Element {
   return (
     <footer className="footer container">
-      <Link to={Routes.Main} className="footer__logo-link">
+      <Link to={AppRoutes.Main} className="footer__logo-link">
         <img
           className="footer__logo"
           src="img/logo.svg"

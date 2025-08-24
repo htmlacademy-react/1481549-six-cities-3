@@ -1,7 +1,11 @@
-import offer from '@data/mocks/offer';
 import Reviews from '../reviews/reviews';
+import Offer from '@models/offer';
 
-export default function Content(): JSX.Element {
+type ContentProps = {
+  offer: Offer;
+};
+
+export default function Content({ offer }: ContentProps): JSX.Element {
   return (
     <div className="offer__container container">
       <div className="offer__wrapper">

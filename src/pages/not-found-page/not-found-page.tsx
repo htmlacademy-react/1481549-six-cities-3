@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Routes } from '../../router/routes';
+import { AppRoutes } from '../../router/routes';
 
 import styles from './not-found-page.module.scss';
 
@@ -8,7 +8,7 @@ export default function NotFoundPage(): JSX.Element {
     <div className="container">
       <div className={styles.error}>
         <p className={styles.message}>Страница не найдена</p>
-        <Link to={Routes.Main} className={styles.back}>
+        <Link to={AppRoutes.Main} className={styles.back}>
           Вернуться на главную
           <img
             className="footer__logo"

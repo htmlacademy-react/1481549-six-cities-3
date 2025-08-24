@@ -11,6 +11,7 @@ type CardProps = {
   type: CardType;
   // isBookmark: boolean;
   // toBookmarks: () => void;
+  onHover?: () => void;
 };
 
 export default function Card({
@@ -20,9 +21,10 @@ export default function Card({
   price,
   title,
   type,
+  onHover,
 }: CardProps): JSX.Element {
   return (
-    <article className="cities__card place-card">
+    <article className="cities__card place-card" onMouseEnter={onHover}>
       {isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
