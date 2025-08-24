@@ -1,6 +1,6 @@
 import getAuthorizationStatus from '@data/mocks/auth';
 import { Navigate } from 'react-router-dom';
-import { Routes } from '../../router/routes';
+import { AppRoutes } from '../../router/routes';
 import { AuthorizationStatus } from '@data/const';
 
 type PrivateRouteProps = {
@@ -21,6 +21,6 @@ export default function PrivateRoute({
   return condition ? (
     children
   ) : (
-    <Navigate to={isReverse ? Routes.Main : Routes.Login} />
+    <Navigate to={isReverse ? AppRoutes.Main : AppRoutes.Login} />
   );
 }

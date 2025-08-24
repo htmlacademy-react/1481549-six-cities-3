@@ -1,15 +1,15 @@
 import cn from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
-import { Routes } from '../../router/routes';
+import { AppRoutes } from '../../router/routes';
 
 export default function Logo(): JSX.Element {
   const { pathname } = useLocation();
 
   return (
     <Link
-      to={Routes.Main}
+      to={AppRoutes.Main}
       className={cn('header__logo-link', {
-        ['header__logo-link--active']: pathname === Routes.Main,
+        ['header__logo-link--active']: pathname === AppRoutes.Main,
       })}
     >
       <img

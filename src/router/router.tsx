@@ -9,13 +9,13 @@ import OfferPage from '@pages/offer-page/offer-page';
 import NotFoundPage from '@pages/not-found-page/not-found-page';
 import LoginPage from '@pages/login-page/login-page';
 
-import { Routes } from './routes';
+import { AppRoutes } from './routes';
 import { cards } from '@data/mocks/cards';
 import { favorites } from '@data/mocks/favorites';
 
 const router = createBrowserRouter([
   {
-    path: Routes.Main,
+    path: AppRoutes.Main,
     index: true,
     element: (
       <PageLayout classNames={['page--gray', 'page--main']}>
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: Routes.Favorite,
+    path: AppRoutes.Favorite,
     element: (
       <PrivateRoute>
         <PageLayout withFooter>
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: Routes.Offer,
+    path: AppRoutes.Offer,
     element: (
       <PageLayout>
         <OfferPage />
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: Routes.Login,
+    path: AppRoutes.Login,
     element: (
       <PrivateRoute isReverse>
         <PageLayout classNames={['page--login']}>
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: Routes.NotFound,
+    path: AppRoutes.NotFound,
     element: (
       <PageLayout>
         <NotFoundPage />

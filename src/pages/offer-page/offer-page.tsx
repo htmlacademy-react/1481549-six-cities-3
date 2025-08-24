@@ -4,7 +4,7 @@ import Gallery from './components/gallery/gallery';
 import Map from './components/map/map';
 import Places from './components/places/places';
 import fullOffers from '@data/mocks/fullOffers';
-import { Routes } from '../../router/routes';
+import { AppRoutes } from '../../router/routes';
 
 export default function OfferPage() {
   const { id } = useParams() as { id: string };
@@ -23,6 +23,6 @@ export default function OfferPage() {
       </div>
     </main>
   ) : (
-    <Navigate to={Routes.NotFound} />
+    <Navigate to={AppRoutes.NotFound} />
   );
 }
