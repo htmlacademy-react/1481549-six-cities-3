@@ -26,7 +26,7 @@ const router = createBrowserRouter([
   {
     path: AppRoutes.Favorite,
     element: (
-      <PrivateRoute>
+      <PrivateRoute policy={'user:authorized'}>
         <PageLayout withFooter>
           <FavoritesPage favorites={favorites} />
         </PageLayout>
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
   {
     path: AppRoutes.Login,
     element: (
-      <PrivateRoute isReverse>
+      <PrivateRoute policy={'user:unauthorized'}>
         <PageLayout classNames={['page--login']}>
           <LoginPage />
         </PageLayout>
