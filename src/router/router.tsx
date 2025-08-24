@@ -3,15 +3,20 @@ import { createBrowserRouter } from 'react-router-dom';
 import PageLayout from '@components/layout/page-layout';
 import PrivateRoute from '@components/private/private-route';
 
-import FavoritesPage from '@pages/favorites-page/favorites-page';
-import MainPage from '@pages/main-page/main-page';
-import OfferPage from '@pages/offer-page/offer-page';
-import NotFoundPage from '@pages/not-found-page/not-found-page';
-import LoginPage from '@pages/login-page/login-page';
-
 import { AppRoutes } from './routes';
 import { cards } from '@data/mocks/cards';
 import { favorites } from '@data/mocks/favorites';
+import { lazy } from 'react';
+
+/* eslint-disable react-refresh/only-export-components */
+// https://stackoverflow.com/questions/77365777/how-to-avoid-eslint-warning-in-react-fast-refresh-only-works-when-a-file-only-e
+const MainPage = lazy(() => import('@pages/main-page/main-page'));
+const FavoritesPage = lazy(
+  () => import('@pages/favorites-page/favorites-page')
+);
+const OfferPage = lazy(() => import('@pages/offer-page/offer-page'));
+const NotFoundPage = lazy(() => import('@pages/not-found-page/not-found-page'));
+const LoginPage = lazy(() => import('@pages/login-page/login-page'));
 
 const router = createBrowserRouter([
   {
