@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     path: AppRoutes.Main,
     index: true,
     element: (
-      <PageLayout classNames={['page--gray', 'page--main']}>
+      <PageLayout className={['page--gray', 'page--main']}>
         <MainPage cards={cards} />
       </PageLayout>
     ),
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     path: AppRoutes.Login,
     element: (
       <PrivateRoute policy={'user:unauthorized'}>
-        <PageLayout classNames={['page--login']}>
+        <PageLayout className={['page--login']}>
           <LoginPage />
         </PageLayout>
       </PrivateRoute>
