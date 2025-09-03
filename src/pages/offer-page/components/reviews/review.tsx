@@ -1,10 +1,11 @@
+import dayjs from 'dayjs';
+
 type ReviewProps = {
-  // id: number;
   userName: string;
   userImage: string;
   rating: number;
   comment: string;
-  date: Date;
+  date: string;
 };
 
 export default function Review({
@@ -14,6 +15,8 @@ export default function Review({
   comment,
   date,
 }: ReviewProps): JSX.Element {
+  const formattedDate = dayjs(date).format('DD.MM.YYYY HH.mm');
+
   return (
     <li className="reviews__item">
       <div className="reviews__user user">
@@ -31,13 +34,13 @@ export default function Review({
       <div className="reviews__info">
         <div className="reviews__rating rating">
           <div className="reviews__stars rating__stars">
-            <span style={{ width: '80%' }}></span>
+            <span style={{ width: `${rating * 20}%` }}></span>
             <span className="visually-hidden">Rating {rating}</span>
           </div>
         </div>
         <p className="reviews__text">{comment}</p>
         <time className="reviews__time" dateTime={date.toString()}>
-          {date.toDateString()}
+          {formattedDate}
         </time>
       </div>
     </li>
