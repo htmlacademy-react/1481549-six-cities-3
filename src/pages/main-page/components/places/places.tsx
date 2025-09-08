@@ -23,6 +23,7 @@ export default function Places({
           <CardComponent
             key={card.id}
             id={card.id}
+            rating={card.rating}
             isPremium={card.isPremium}
             src={card.previewImage}
             price={card.price}

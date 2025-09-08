@@ -1,6 +1,5 @@
-// import Card from '../../../../models/card';
-import CardComponent from '../../../../components/card/card';
-import Card from '../../../../models/card';
+import CardComponent from '@components/card/card';
+import Card from '@models/card';
 import City from '../city/city';
 
 type FavoriteItemProps = {
@@ -20,6 +19,7 @@ export default function FavoriteItem({
           <CardComponent
             key={card.id}
             id={card.id}
+            rating={card.rating}
             isPremium={card.isPremium}
             src={card.previewImage}
             price={card.price}

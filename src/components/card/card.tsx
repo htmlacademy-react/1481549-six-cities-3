@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom';
-import CardType from '../../models/cardType';
+import CardType from '@models/cardType';
+import Premium from './premium';
 
 type CardProps = {
   id: number;
   isPremium: boolean;
   src: string;
   price: number;
-  // rating: number;
+  rating: number;
   title: string;
   type: CardType;
   // isBookmark: boolean;
   // toBookmarks: () => void;
   onHover?: () => void;
+  onLeave?: () => void;
 };
 
 export default function Card({
@@ -21,15 +23,17 @@ export default function Card({
   price,
   title,
   type,
+  rating,
   onHover,
+  onLeave,
 }: CardProps): JSX.Element {
   return (
-    <article className="cities__card place-card" onMouseEnter={onHover}>
-      {isPremium && (
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div>
-      )}
+    <article
+      className="cities__card place-card"
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+    >
+      {isPremium && <Premium />}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <a href="#">
           <img
@@ -56,7 +60,7 @@ export default function Card({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: '80%' }}></span>
+            <span style={{ width: `${rating * 20}%` }}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
