@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, generatePath } from 'react-router-dom';
 import CardType from '@models/cardType';
 import Premium from './premium';
+import { AppRoutes } from '../../router/routes';
 
 type CardProps = {
   id: number;
@@ -65,7 +66,9 @@ export default function Card({
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/${id}`}>{title}</Link>
+          <Link to={generatePath(AppRoutes.Offer, { id: `${id}` })}>
+            {title}
+          </Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>
