@@ -1,6 +1,6 @@
 import Card from '@models/card';
 import Locations from './components/locations/locations';
-import Map from './components/map/map';
+import Map from '../../components/common/map';
 import Places from './components/places/places';
 import { useState } from 'react';
 
@@ -28,7 +28,7 @@ export default function MainPage({ cards }: MainPageProps) {
             }}
           />
           <div className="cities__right-section">
-            <Map />
+            <Map classes="cities" />
           </div>
         </div>
       </div>
