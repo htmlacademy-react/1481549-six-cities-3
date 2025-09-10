@@ -30,6 +30,7 @@ export default function Places({
             title={card.title}
             type={card.type}
             onHover={() => onHover(card.id)}
+            classes={'main'}
           />
         ))}
       </div>

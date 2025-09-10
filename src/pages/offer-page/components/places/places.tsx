@@ -17,6 +17,7 @@ export default function Places(): JSX.Element {
             price={card.price}
             title={card.title}
             type={card.type}
+            classes={'near'}
           />
         ))}
       </div>

@@ -25,6 +25,7 @@ export default function FavoriteItem({
             price={card.price}
             title={card.title}
             type={card.type}
+            classes={'favorites'}
           />
         ))}
       </div>

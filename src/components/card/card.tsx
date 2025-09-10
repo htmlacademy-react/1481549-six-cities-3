@@ -1,7 +1,8 @@
 import { Link, generatePath } from 'react-router-dom';
 import CardType from '@models/cardType';
-import Premium from './premium';
+import Premium from '../common/premium';
 import { AppRoutes } from '../../router/routes';
+import cn from 'classnames';
 
 type CardProps = {
   id: number;
@@ -11,11 +12,32 @@ type CardProps = {
   rating: number;
   title: string;
   type: CardType;
+  classes: CardClassType;
   // isBookmark: boolean;
   // toBookmarks: () => void;
   onHover?: () => void;
   onLeave?: () => void;
 };
+
+const Classes = {
+  main: {
+    container: 'cities__card',
+    imageWrapper: 'cities__image-wrapper',
+    info: '',
+  },
+  favorites: {
+    container: 'favorites__card',
+    imageWrapper: 'favorites__image-wrapper',
+    info: 'favorites__card-info',
+  },
+  near: {
+    container: 'near-places__card',
+    imageWrapper: 'near-places__image-wrapper',
+    info: '',
+  },
+};
+
+export type CardClassType = keyof typeof Classes;
 
 export default function Card({
   id,
@@ -25,18 +47,24 @@ export default function Card({
   title,
   type,
   rating,
+  classes,
   onHover,
   onLeave,
 }: CardProps): JSX.Element {
   return (
     <article
-      className="cities__card place-card"
+      className={cn('place-card', Classes[classes].container)}
       onMouseEnter={onHover}
       onMouseLeave={onLeave}
     >
-      {isPremium && <Premium />}
-      <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+      {isPremium && <Premium classes={'card'} />}
+      <div
+        className={cn(
+          'place-card__image-wrapper',
+          Classes[classes].imageWrapper
+        )}
+      >
+        <a href={src}>
           <img
             className="place-card__image"
             src={src}
@@ -46,7 +74,7 @@ export default function Card({
           />
         </a>
       </div>
-      <div className="place-card__info">
+      <div className={cn('place-card__info', Classes[classes].info)}>
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{price}</b>
