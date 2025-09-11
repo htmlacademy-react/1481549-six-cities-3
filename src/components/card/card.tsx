@@ -1,17 +1,43 @@
-import { Link } from 'react-router-dom';
-import CardType from '../../models/cardType';
+import { Link, generatePath } from 'react-router-dom';
+import CardType from '@models/cardType';
+import Premium from '../common/premium';
+import { AppRoutes } from '../../router/routes';
+import cn from 'classnames';
 
 type CardProps = {
   id: number;
   isPremium: boolean;
   src: string;
   price: number;
-  // rating: number;
+  rating: number;
   title: string;
   type: CardType;
+  classes: CardClassType;
   // isBookmark: boolean;
   // toBookmarks: () => void;
+  onHover?: () => void;
+  onLeave?: () => void;
 };
+
+const Classes = {
+  main: {
+    container: 'cities__card',
+    imageWrapper: 'cities__image-wrapper',
+    info: '',
+  },
+  favorites: {
+    container: 'favorites__card',
+    imageWrapper: 'favorites__image-wrapper',
+    info: 'favorites__card-info',
+  },
+  near: {
+    container: 'near-places__card',
+    imageWrapper: 'near-places__image-wrapper',
+    info: '',
+  },
+};
+
+export type CardClassType = keyof typeof Classes;
 
 export default function Card({
   id,
@@ -20,16 +46,25 @@ export default function Card({
   price,
   title,
   type,
+  rating,
+  classes,
+  onHover,
+  onLeave,
 }: CardProps): JSX.Element {
   return (
-    <article className="cities__card place-card">
-      {isPremium && (
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div>
-      )}
-      <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+    <article
+      className={cn('place-card', Classes[classes].container)}
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+    >
+      {isPremium && <Premium classes={'card'} />}
+      <div
+        className={cn(
+          'place-card__image-wrapper',
+          Classes[classes].imageWrapper
+        )}
+      >
+        <a href={src}>
           <img
             className="place-card__image"
             src={src}
@@ -39,7 +74,7 @@ export default function Card({
           />
         </a>
       </div>
-      <div className="place-card__info">
+      <div className={cn('place-card__info', Classes[classes].info)}>
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{price}</b>
@@ -54,12 +89,14 @@ export default function Card({
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: '80%' }}></span>
+            <span style={{ width: `${rating * 20}%` }}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/${id}`}>{title}</Link>
+          <Link to={generatePath(AppRoutes.Offer, { id: `${id}` })}>
+            {title}
+          </Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

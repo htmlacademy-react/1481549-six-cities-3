@@ -3,36 +3,43 @@ import { createBrowserRouter } from 'react-router-dom';
 import PageLayout from '@components/layout/page-layout';
 import PrivateRoute from '@components/private/private-route';
 
-import FavoritesPage from '@pages/favorites-page/favorites-page';
-import MainPage from '@pages/main-page/main-page';
-import OfferPage from '@pages/offer-page/offer-page';
-import NotFoundPage from '@pages/not-found-page/not-found-page';
-import LoginPage from '@pages/login-page/login-page';
+import { AppRoutes } from './routes';
+import { cards } from '@data/mocks/cards';
+import { favorites } from '@data/mocks/favorites';
+import { lazy } from 'react';
 
-import { Routes } from './routes';
+/* eslint-disable react-refresh/only-export-components */
+// https://stackoverflow.com/questions/77365777/how-to-avoid-eslint-warning-in-react-fast-refresh-only-works-when-a-file-only-e
+const MainPage = lazy(() => import('@pages/main-page/main-page'));
+const FavoritesPage = lazy(
+  () => import('@pages/favorites-page/favorites-page')
+);
+const OfferPage = lazy(() => import('@pages/offer-page/offer-page'));
+const NotFoundPage = lazy(() => import('@pages/not-found-page/not-found-page'));
+const LoginPage = lazy(() => import('@pages/login-page/login-page'));
 
 const router = createBrowserRouter([
   {
-    path: Routes.Main,
+    path: AppRoutes.Main,
     index: true,
     element: (
-      <PageLayout classNames={['page--gray', 'page--main']}>
-        <MainPage />
+      <PageLayout className={['page--gray', 'page--main']}>
+        <MainPage cards={cards} />
       </PageLayout>
     ),
   },
   {
-    path: Routes.Favorite,
+    path: AppRoutes.Favorite,
     element: (
-      <PrivateRoute>
+      <PrivateRoute policy={'user:authorized'}>
         <PageLayout withFooter>
-          <FavoritesPage />
+          <FavoritesPage favorites={favorites} />
         </PageLayout>
       </PrivateRoute>
     ),
   },
   {
-    path: Routes.Offer,
+    path: AppRoutes.Offer,
     element: (
       <PageLayout>
         <OfferPage />
@@ -40,17 +47,17 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: Routes.Login,
+    path: AppRoutes.Login,
     element: (
-      <PrivateRoute isReverse>
-        <PageLayout classNames={['page--login']}>
+      <PrivateRoute policy={'user:unauthorized'}>
+        <PageLayout className={['page--login']}>
           <LoginPage />
         </PageLayout>
       </PrivateRoute>
     ),
   },
   {
-    path: Routes.NotFound,
+    path: AppRoutes.NotFound,
     element: (
       <PageLayout>
         <NotFoundPage />

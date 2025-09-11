@@ -1,7 +1,7 @@
-export const Routes = {
+export const AppRoutes = {
   Main: '/',
   Login: '/login',
-  Favorite: '/favorite',
+  Favorite: '/favorites',
   Offer: '/offer/:id',
   NotFound: '/*',
 } as const;

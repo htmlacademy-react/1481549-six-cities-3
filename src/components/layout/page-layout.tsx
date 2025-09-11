@@ -6,13 +6,13 @@ import { AuthorizationStatus } from '@data/const';
 import getAuthorizationStatus from '@data/mocks/auth';
 
 type PageLayoutProps = {
-  classNames?: string[];
+  className?: string[];
   children: JSX.Element;
   withFooter?: boolean;
 };
 
 export default function PageLayout({
-  classNames,
+  className: classNames,
   children,
   withFooter,
 }: PageLayoutProps): JSX.Element {

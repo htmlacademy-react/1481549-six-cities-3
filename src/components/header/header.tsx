@@ -1,4 +1,4 @@
-import Logo from './logo';
+import Logo from '../common/logo';
 import Auth from './auth';
 import NotAuth from './not-auth';
 
@@ -12,7 +12,7 @@ export default function Header({ isAuth }: HeaderProps): JSX.Element {
       <div className="container">
         <div className="header__wrapper">
           <div className="header__left">
-            <Logo />
+            <Logo classes="header" />
           </div>
           {isAuth ? <Auth /> : <NotAuth />}
         </div>

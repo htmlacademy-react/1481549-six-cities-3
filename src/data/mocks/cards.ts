@@ -24,4 +24,27 @@ export const cards: Card[] = [
       },
     },
   },
+  {
+    id: 1,
+    previewImage: 'img/room.jpg',
+    price: 120,
+    rating: 5,
+    title: 'Wood and stone place',
+    type: 'room',
+    isPremium: true,
+    isFavorite: false,
+    location: {
+      latitude: 0,
+      longitude: 1,
+      zoom: 8,
+    },
+    city: {
+      name: 'Test2',
+      location: {
+        latitude: 0,
+        longitude: 1,
+        zoom: 8,
+      },
+    },
+  },
 ];

@@ -1,6 +1,6 @@
 type Review = {
   id: number;
-  date: Date;
+  date: string;
   user: {
     name: string;
     avatarUrl: string;

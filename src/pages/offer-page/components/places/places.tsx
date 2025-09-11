@@ -11,11 +11,13 @@ export default function Places(): JSX.Element {
           <CardComponent
             key={card.id}
             id={card.id}
+            rating={card.rating}
             isPremium={card.isPremium}
             src={card.previewImage}
             price={card.price}
             title={card.title}
             type={card.type}
+            classes={'near'}
           />
         ))}
       </div>
