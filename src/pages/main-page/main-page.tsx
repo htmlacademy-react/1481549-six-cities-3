@@ -28,7 +28,12 @@ export default function MainPage({ cards }: MainPageProps) {
             }}
           />
           <div className="cities__right-section">
-            <Map classes="cities" />
+            <Map
+              classes="cities"
+              cards={cards}
+              city={cards[0].city}
+              selectedCard={undefined}
+            />
           </div>
         </div>
       </div>
