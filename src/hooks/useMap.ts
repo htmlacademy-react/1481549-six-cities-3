@@ -1,5 +1,6 @@
 import { useEffect, useState, MutableRefObject, useRef } from 'react';
 import { Map, TileLayer } from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 import City from '@models/city';
 
 function useMap(
