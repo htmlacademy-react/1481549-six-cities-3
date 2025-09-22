@@ -9,8 +9,7 @@ type MainPageProps = {
 };
 
 export default function MainPage({ cards }: MainPageProps) {
-  /* eslint-disable-next-line */
-  const [_, setActiveCardId] = useState(0);
+  const [activeCardId, setActiveCardId] = useState<number | undefined>(0);
 
   return (
     <main className="page__main page__main--index">
@@ -23,7 +22,7 @@ export default function MainPage({ cards }: MainPageProps) {
           <Places
             placesCount={cards.length}
             cards={cards}
-            onHover={(id) => {
+            setActiveCardId={(id) => {
               setActiveCardId(id);
             }}
           />
@@ -32,7 +31,7 @@ export default function MainPage({ cards }: MainPageProps) {
               classes="cities"
               cards={cards}
               city={cards[0].city}
-              selectedCard={undefined}
+              selectedCardId={activeCardId}
             />
           </div>
         </div>

@@ -4,24 +4,26 @@ import { Icon, layerGroup, Marker } from 'leaflet';
 import useMap from '@hooks/useMap';
 import City from '@models/city';
 import Card from '@models/card';
-import { URL_MARKER_CURRENT, URL_MARKER_DEFAULT } from '@data/const';
+
+import markerImgDefault from '../../../public/img/pin.svg';
+import markerImgActive from '../../../public/img/pin-active.svg';
 
 type MapProps = {
   city: City;
   cards: Card[];
-  selectedCard: Card | undefined;
+  selectedCardId?: number;
   classes: 'cities' | 'offer';
 };
 
 const defaultCustomIcon = new Icon({
-  iconUrl: URL_MARKER_DEFAULT,
-  iconSize: [40, 40],
+  iconUrl: markerImgDefault,
+  iconSize: [27, 39],
   iconAnchor: [20, 40],
 });
 
 const currentCustomIcon = new Icon({
-  iconUrl: URL_MARKER_CURRENT,
-  iconSize: [40, 40],
+  iconUrl: markerImgActive,
+  iconSize: [27, 39],
   iconAnchor: [20, 40],
 });
 
@@ -29,7 +31,7 @@ export default function Map({
   classes,
   city,
   cards,
-  selectedCard,
+  selectedCardId,
 }: MapProps): JSX.Element {
   const mapRef = useRef(null);
   const map = useMap(mapRef, city);
@@ -45,7 +47,7 @@ export default function Map({
 
         marker
           .setIcon(
-            selectedCard !== undefined && card.title === selectedCard.title
+            selectedCardId !== undefined && card.id === selectedCardId
               ? currentCustomIcon
               : defaultCustomIcon
           )
@@ -56,7 +58,7 @@ export default function Map({
         map.removeLayer(markerLayer);
       };
     }
-  }, [map, cards, selectedCard]);
+  }, [map, cards, selectedCardId]);
 
   return <section className={`${classes}__map map`} ref={mapRef}></section>;
 }

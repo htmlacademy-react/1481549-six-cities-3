@@ -2,7 +2,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import Content from './components/content/content';
 import Gallery from './components/gallery/gallery';
 import Places from './components/places/places';
-import fullOffers from '@data/mocks/fullOffers';
+import fullOffers from '@data/mocks/full-offers';
 import { AppRoutes } from '../../router/routes';
 
 export default function OfferPage() {
