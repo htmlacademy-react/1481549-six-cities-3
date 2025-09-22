@@ -1,4 +1,5 @@
 import CardType from './cardType';
+import City from './city';
 import Location from './location';
 
 type Offer = {
@@ -6,10 +7,7 @@ type Offer = {
   title: string;
   type: CardType;
   price: number;
-  city: {
-    name: string;
-    location: Location;
-  };
+  city: City;
   location: Location;
   isFavorite: boolean;
   isPremium: boolean;

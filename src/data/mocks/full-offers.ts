@@ -6,18 +6,18 @@ const fullOffers: Offer[] = [
     title: 'Beautiful &; luxurious studio at great location',
     type: 'apartment',
     price: 120,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+      zoom: 8,
+    },
     city: {
-      name: 'Test',
+      name: 'Амстердам',
       location: {
-        latitude: 0,
-        longitude: 1,
+        latitude: 52.3909553943508,
+        longitude: 4.85309666406198,
         zoom: 8,
       },
-    },
-    location: {
-      latitude: 0,
-      longitude: 1,
-      zoom: 8,
     },
     isFavorite: false,
     isPremium: true,
@@ -50,18 +50,18 @@ const fullOffers: Offer[] = [
     title: 'Wood and stone place',
     type: 'room',
     price: 120,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+      zoom: 8,
+    },
     city: {
-      name: 'Test',
+      name: 'Амстердам',
       location: {
-        latitude: 0,
-        longitude: 1,
+        latitude: 52.3909553943508,
+        longitude: 4.85309666406198,
         zoom: 8,
       },
-    },
-    location: {
-      latitude: 0,
-      longitude: 1,
-      zoom: 8,
     },
     isFavorite: false,
     isPremium: true,

@@ -5,13 +5,13 @@ import CardComponent from '@components/card/card';
 type PlacesProps = {
   cards: Card[];
   placesCount: number;
-  onHover: (id: number) => void;
+  setActiveCardId: (id: number | undefined) => void;
 };
 
 export default function Places({
   placesCount,
   cards,
-  onHover,
+  setActiveCardId,
 }: PlacesProps): JSX.Element {
   return (
     <section className="cities__places places">
@@ -29,7 +29,8 @@ export default function Places({
             price={card.price}
             title={card.title}
             type={card.type}
-            onHover={() => onHover(card.id)}
+            onHover={() => setActiveCardId(card.id)}
+            onLeave={() => setActiveCardId(undefined)}
             classes={'main'}
           />
         ))}
