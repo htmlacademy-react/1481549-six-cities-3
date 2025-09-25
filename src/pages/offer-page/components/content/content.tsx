@@ -22,7 +22,7 @@ export default function Content({ offer }: ContentProps): JSX.Element {
   return (
     <div className="offer__container container">
       <div className="offer__wrapper">
-        {isPremium && <Premium classes={'offer'} />}
+        {isPremium && <Premium className={'offer'} />}
         <div className="offer__name-wrapper">
           <h1 className="offer__name">{title}</h1>
           <button className="offer__bookmark-button button" type="button">

@@ -20,7 +20,7 @@ export default function Places({
       <Sorting />
       <CardList
         cards={cards}
-        classes={'main'}
+        className={'main'}
         setActiveCardId={setActiveCardId}
       />
     </section>

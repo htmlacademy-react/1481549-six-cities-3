@@ -4,11 +4,11 @@ import CardComponent from '@components/card/card';
 
 type CardListProps = {
   cards: Card[];
-  classes: CardClassType;
+  className: CardClassType;
   setActiveCardId?: (id: number | undefined) => void;
 };
 
-const Classes = {
+const classes = {
   main: 'cities__places-list places__list tabs__content',
   favorites: 'favorites__places',
   near: 'near-places__list places__list',
@@ -16,11 +16,11 @@ const Classes = {
 
 export default function CardList({
   cards,
-  classes,
+  className,
   setActiveCardId,
 }: CardListProps): JSX.Element {
   return (
-    <div className={Classes[classes]}>
+    <div className={classes[className]}>
       {cards.map((card) => (
         <CardComponent
           key={card.id}
@@ -35,7 +35,7 @@ export default function CardList({
           onLeave={
             setActiveCardId ? () => setActiveCardId(undefined) : undefined
           }
-          classes={classes}
+          className={className}
         />
       ))}
     </div>

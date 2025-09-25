@@ -16,7 +16,7 @@ export default function Places({
       <h2 className="near-places__title">Other places in the neighbourhood</h2>
       <CardList
         cards={nearPlaces}
-        classes={'near'}
+        className={'near'}
         setActiveCardId={setActiveCardId}
       />
     </section>

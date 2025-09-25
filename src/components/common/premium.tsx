@@ -1,17 +1,17 @@
-const Classes = {
+const classes = {
   card: 'place-card__mark',
   offer: 'offer__mark',
 };
 
-type ClassesType = keyof typeof Classes;
+type ClassesType = keyof typeof classes;
 
 export default function Premium({
-  classes,
+  className,
 }: {
-  classes: ClassesType;
+  className: ClassesType;
 }): JSX.Element {
   return (
-    <div className={Classes[classes]}>
+    <div className={classes[className]}>
       <span>Premium</span>
     </div>
   );
