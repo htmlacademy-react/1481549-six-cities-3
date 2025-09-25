@@ -5,7 +5,7 @@ import { AppRoutes } from '../../router/routes';
 import cn from 'classnames';
 
 type CardProps = {
-  id: number;
+  id: string;
   isPremium: boolean;
   src: string;
   price: number;
@@ -13,10 +13,7 @@ type CardProps = {
   title: string;
   type: CardType;
   className: CardClassType;
-  // isBookmark: boolean;
-  // toBookmarks: () => void;
-  onHover?: () => void;
-  onLeave?: () => void;
+  onHover?: (id: string | undefined) => void;
 };
 
 const classes = {
@@ -49,13 +46,12 @@ export default function Card({
   rating,
   className,
   onHover,
-  onLeave,
 }: CardProps): JSX.Element {
   return (
     <article
       className={cn('place-card', classes[className].container)}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
+      onMouseEnter={() => onHover?.(id)}
+      onMouseLeave={() => onHover?.(undefined)}
     >
       {isPremium && <Premium className={'card'} />}
       <div

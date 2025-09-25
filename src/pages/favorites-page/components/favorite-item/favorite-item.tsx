@@ -14,7 +14,7 @@ export default function FavoriteItem({
   return (
     <li className="favorites__locations-items">
       <City city={city} />
-      <CardList cards={cards} className={'favorites'} />
+      <CardList cards={cards} className="favorites" />
     </li>
   );
 }

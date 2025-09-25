@@ -4,21 +4,13 @@ import Card from '@models/card';
 
 type PlacesProps = {
   nearPlaces: Card[];
-  setActiveCardId: (id: number | undefined) => void;
 };
 
-export default function Places({
-  nearPlaces,
-  setActiveCardId,
-}: PlacesProps): JSX.Element {
+export default function Places({ nearPlaces }: PlacesProps): JSX.Element {
   return (
     <section className="near-places places">
       <h2 className="near-places__title">Other places in the neighbourhood</h2>
-      <CardList
-        cards={nearPlaces}
-        className={'near'}
-        setActiveCardId={setActiveCardId}
-      />
+      <CardList cards={nearPlaces} className="near" />
     </section>
   );
 }

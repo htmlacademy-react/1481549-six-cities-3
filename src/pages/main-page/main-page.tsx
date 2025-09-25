@@ -9,7 +9,9 @@ type MainPageProps = {
 };
 
 export default function MainPage({ cards }: MainPageProps) {
-  const [activeCardId, setActiveCardId] = useState<number | undefined>(0);
+  const [activeCardId, setActiveCardId] = useState<string | undefined>(
+    undefined
+  );
 
   return (
     <main className="page__main page__main--index">
@@ -22,9 +24,7 @@ export default function MainPage({ cards }: MainPageProps) {
           <Places
             placesCount={cards.length}
             cards={cards}
-            setActiveCardId={(id) => {
-              setActiveCardId(id);
-            }}
+            onCardHover={setActiveCardId}
           />
           <div className="cities__right-section">
             <Map

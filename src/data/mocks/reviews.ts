@@ -2,7 +2,7 @@ import Review from '../../models/review';
 
 const reviews: Review[] = [
   {
-    id: 0,
+    id: '0',
     date: '2019-05-08T14:13:56.569Z',
     user: {
       name: 'Max',

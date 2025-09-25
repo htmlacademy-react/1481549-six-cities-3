@@ -11,7 +11,7 @@ import markerImgActive from '../../../public/img/pin-active.svg';
 type MapProps = {
   city: City;
   cards: Card[];
-  selectedCardId?: number;
+  selectedCardId?: string;
   classes: 'cities' | 'offer';
 };
 

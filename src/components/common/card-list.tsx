@@ -5,7 +5,7 @@ import CardComponent from '@components/card/card';
 type CardListProps = {
   cards: Card[];
   className: CardClassType;
-  setActiveCardId?: (id: number | undefined) => void;
+  onCardHover?: (id: string | undefined) => void;
 };
 
 const classes = {
@@ -17,7 +17,7 @@ const classes = {
 export default function CardList({
   cards,
   className,
-  setActiveCardId,
+  onCardHover,
 }: CardListProps): JSX.Element {
   return (
     <div className={classes[className]}>
@@ -31,10 +31,7 @@ export default function CardList({
           price={card.price}
           title={card.title}
           type={card.type}
-          onHover={setActiveCardId ? () => setActiveCardId(card.id) : undefined}
-          onLeave={
-            setActiveCardId ? () => setActiveCardId(undefined) : undefined
-          }
+          onHover={onCardHover}
           className={className}
         />
       ))}

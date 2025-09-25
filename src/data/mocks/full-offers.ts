@@ -2,7 +2,7 @@ import Offer from '../../models/offer';
 
 const fullOffers: Offer[] = [
   {
-    id: 0,
+    id: '0',
     title: 'Beautiful &; luxurious studio at great location',
     type: 'apartment',
     price: 120,
@@ -46,7 +46,7 @@ const fullOffers: Offer[] = [
     maxAdults: 4,
   },
   {
-    id: 1,
+    id: '1',
     title: 'Wood and stone place',
     type: 'room',
     price: 120,
