@@ -3,7 +3,7 @@ import City from './city';
 import Location from './location';
 
 type Card = {
-  id: number;
+  id: string;
   title: string;
   type: CardType;
   price: number;

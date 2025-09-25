@@ -5,21 +5,18 @@ import { AppRoutes } from '../../router/routes';
 import cn from 'classnames';
 
 type CardProps = {
-  id: number;
+  id: string;
   isPremium: boolean;
   src: string;
   price: number;
   rating: number;
   title: string;
   type: CardType;
-  classes: CardClassType;
-  // isBookmark: boolean;
-  // toBookmarks: () => void;
-  onHover?: () => void;
-  onLeave?: () => void;
+  className: CardClassType;
+  onHover?: (id: string | undefined) => void;
 };
 
-const Classes = {
+const classes = {
   main: {
     container: 'cities__card',
     imageWrapper: 'cities__image-wrapper',
@@ -37,7 +34,7 @@ const Classes = {
   },
 };
 
-export type CardClassType = keyof typeof Classes;
+export type CardClassType = keyof typeof classes;
 
 export default function Card({
   id,
@@ -47,21 +44,20 @@ export default function Card({
   title,
   type,
   rating,
-  classes,
+  className,
   onHover,
-  onLeave,
 }: CardProps): JSX.Element {
   return (
     <article
-      className={cn('place-card', Classes[classes].container)}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
+      className={cn('place-card', classes[className].container)}
+      onMouseEnter={() => onHover?.(id)}
+      onMouseLeave={() => onHover?.(undefined)}
     >
-      {isPremium && <Premium classes={'card'} />}
+      {isPremium && <Premium className={'card'} />}
       <div
         className={cn(
           'place-card__image-wrapper',
-          Classes[classes].imageWrapper
+          classes[className].imageWrapper
         )}
       >
         <a href={src}>
@@ -74,7 +70,7 @@ export default function Card({
           />
         </a>
       </div>
-      <div className={cn('place-card__info', Classes[classes].info)}>
+      <div className={cn('place-card__info', classes[className].info)}>
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{price}</b>

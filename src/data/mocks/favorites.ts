@@ -2,7 +2,7 @@ import Card from '../../models/card';
 
 export const favorites: Card[] = [
   {
-    id: 0,
+    id: '0',
     previewImage: 'img/apartment-01.jpg',
     price: 120,
     rating: 5,
@@ -25,7 +25,7 @@ export const favorites: Card[] = [
     },
   },
   {
-    id: 1,
+    id: '1',
     previewImage: 'img/apartment-01.jpg',
     price: 120,
     rating: 5,

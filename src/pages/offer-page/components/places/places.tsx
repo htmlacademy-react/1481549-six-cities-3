@@ -1,26 +1,16 @@
 // import { places } from '../../../../data/mocks/places';
-import CardComponent from '@components/card/card';
-import { places } from '@data/mocks/places';
+import CardList from '@components/common/card-list';
+import Card from '@models/card';
 
-export default function Places(): JSX.Element {
+type PlacesProps = {
+  nearPlaces: Card[];
+};
+
+export default function Places({ nearPlaces }: PlacesProps): JSX.Element {
   return (
     <section className="near-places places">
       <h2 className="near-places__title">Other places in the neighbourhood</h2>
-      <div className="near-places__list places__list">
-        {places.map((card) => (
-          <CardComponent
-            key={card.id}
-            id={card.id}
-            rating={card.rating}
-            isPremium={card.isPremium}
-            src={card.previewImage}
-            price={card.price}
-            title={card.title}
-            type={card.type}
-            classes={'near'}
-          />
-        ))}
-      </div>
+      <CardList cards={nearPlaces} className="near" />
     </section>
   );
 }

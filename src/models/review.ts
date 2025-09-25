@@ -1,5 +1,5 @@
 type Review = {
-  id: number;
+  id: string;
   date: string;
   user: {
     name: string;

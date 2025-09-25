@@ -1,6 +1,6 @@
-import CardComponent from '@components/card/card';
 import Card from '@models/card';
 import City from '../city/city';
+import CardList from '@components/common/card-list';
 
 type FavoriteItemProps = {
   city: string;
@@ -14,21 +14,7 @@ export default function FavoriteItem({
   return (
     <li className="favorites__locations-items">
       <City city={city} />
-      <div className="favorites__places">
-        {cards.map((card) => (
-          <CardComponent
-            key={card.id}
-            id={card.id}
-            rating={card.rating}
-            isPremium={card.isPremium}
-            src={card.previewImage}
-            price={card.price}
-            title={card.title}
-            type={card.type}
-            classes={'favorites'}
-          />
-        ))}
-      </div>
+      <CardList cards={cards} className="favorites" />
     </li>
   );
 }
