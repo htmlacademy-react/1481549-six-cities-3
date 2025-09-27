@@ -4,7 +4,6 @@ import PageLayout from '@components/layout/page-layout';
 import PrivateRoute from '@components/private/private-route';
 
 import { AppRoutes } from './routes';
-import { cards } from '@data/mocks/cards';
 import { favorites } from '@data/mocks/favorites';
 import { lazy } from 'react';
 
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
     index: true,
     element: (
       <PageLayout className={['page--gray', 'page--main']}>
-        <MainPage cards={cards} />
+        <MainPage />
       </PageLayout>
     ),
   },
