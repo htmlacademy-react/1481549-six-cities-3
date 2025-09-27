@@ -1,17 +1,26 @@
 import { cities } from '@data/const';
 import cn from 'classnames';
 
-export default function Locations(): JSX.Element {
+type LocationsProps = {
+  activeCity: string;
+  onCityChange: (city: string) => void;
+};
+
+export default function Locations({
+  activeCity,
+  onCityChange,
+}: LocationsProps): JSX.Element {
   return (
     <section className="locations container">
       <ul className="locations__list tabs__list">
-        {cities.map((city, i) => (
+        {cities.map((city) => (
           <li className="locations__item" key={city}>
             <a
               className={cn('locations__item-link', 'tabs__item', {
-                ['tabs__item--active']: i === 0, // пока первый всегда активный.
+                ['tabs__item--active']: city === activeCity,
               })}
               href="#"
+              onClick={() => onCityChange(city)}
             >
               <span>{city}</span>
             </a>

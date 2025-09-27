@@ -1,4 +1,4 @@
-import CardType from './cardType';
+import CardType from './card-type';
 import City from './city';
 import Location from './location';
 
