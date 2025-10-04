@@ -2,9 +2,9 @@ import Locations from './components/locations/locations';
 import Map from '../../components/common/map';
 import Places from './components/places/places';
 import { useState } from 'react';
-import { changeCity } from '@store/actions';
 import Card from '@models/card';
 import { useAppDispatch, useAppSelector } from '@store/hooks';
+import { changeCity } from '@store/cardsSlice';
 
 type WithPlacesProps = {
   city: string;
