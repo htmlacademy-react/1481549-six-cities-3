@@ -1,5 +1,5 @@
 import { Link, generatePath } from 'react-router-dom';
-import CardType from '@models/cardType';
+import CardType from '@models/card-type';
 import Premium from '../common/premium';
 import { AppRoutes } from '../../router/routes';
 import cn from 'classnames';

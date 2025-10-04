@@ -1,6 +1,6 @@
-import Card from '../../models/card';
+import Card from '@models/card';
 
-export const places: Card[] = [
+export const nearPlaces: Card[] = [
   {
     id: '0',
     previewImage: 'img/apartment-01.jpg',
