@@ -52,9 +52,8 @@ const NoPlaces = ({ city }: { city: string }) => (
 
 export default function MainPage() {
   const city = useAppSelector((state) => state.city);
-  const cards = useAppSelector((state) =>
-    state.cards.filter((card) => card.city.name === city)
-  );
+  const allCards = useAppSelector((state) => state.cards);
+  const cards = allCards.filter((card) => card.city.name === city);
 
   const dispatch = useAppDispatch();
 
