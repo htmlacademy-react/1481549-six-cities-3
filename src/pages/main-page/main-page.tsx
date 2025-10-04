@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 import Locations from './components/locations/locations';
 import Map from '../../components/common/map';
 import Places from './components/places/places';
@@ -5,6 +7,51 @@ import { useState } from 'react';
 import { useAppSelector } from '@hooks/useAppSelector';
 import { useAppDispatch } from '@hooks/useAppDispatch';
 import { changeCity } from '@store/actions';
+import Card from '@models/card';
+
+type WithPlacesProps = {
+  city: string;
+  cards: Card[];
+  selectedCardId: string | undefined;
+  onCardHover: (id: string | undefined) => void;
+};
+
+const WithPlaces = ({
+  city,
+  cards,
+  selectedCardId,
+  onCardHover,
+}: WithPlacesProps) => (
+  <div className="cities__places-container container">
+    <Places
+      city={city}
+      placesCount={cards.length}
+      cards={cards}
+      onCardHover={onCardHover}
+    />
+    <div className="cities__right-section">
+      <Map
+        classes="cities"
+        cards={cards}
+        city={cards[0].city}
+        selectedCardId={selectedCardId}
+      />
+    </div>
+  </div>
+);
+
+const NoPlaces = ({ city }: { city: string }) => (
+  <div className="cities__places-container cities__places-container--empty container">
+    <section className="cities__no-places">
+      <div className="cities__status-wrapper tabs__content">
+        <b className="cities__status">No places to stay available</b>
+        <p className="cities__status-description">
+          We could not find any property available at the moment in {city}
+        </p>
+      </div>
+    </section>
+  </div>
+);
 
 export default function MainPage() {
   const city = useAppSelector((state) => state.city);
@@ -30,25 +77,16 @@ export default function MainPage() {
         />
       </div>
       <div className="cities">
-        <div className="cities__places-container container">
-          <Places
+        {cards.length > 0 ? (
+          <WithPlaces
             city={city}
-            placesCount={cards.length}
             cards={cards}
+            selectedCardId={activeCardId}
             onCardHover={setActiveCardId}
           />
-          <div className="cities__right-section">
-            {/* что делать если cards пустой, и неоткуда взять город? */}
-            {cards.length > 0 && (
-              <Map
-                classes="cities"
-                cards={cards}
-                city={cards[0].city}
-                selectedCardId={activeCardId}
-              />
-            )}
-          </div>
-        </div>
+        ) : (
+          <NoPlaces city={city} />
+        )}
       </div>
     </main>
   );
