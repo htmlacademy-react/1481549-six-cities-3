@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Icon, layerGroup, Marker } from 'leaflet';
 
-import useMap from '@hooks/useMap';
+import useMap from '@hooks/use-map';
 import City from '@models/city';
 import Card from '@models/card';
 

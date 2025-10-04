@@ -1,13 +1,10 @@
-import classNames from 'classnames';
-
 import Locations from './components/locations/locations';
 import Map from '../../components/common/map';
 import Places from './components/places/places';
 import { useState } from 'react';
-import { useAppSelector } from '@hooks/useAppSelector';
-import { useAppDispatch } from '@hooks/useAppDispatch';
 import { changeCity } from '@store/actions';
 import Card from '@models/card';
+import { useAppDispatch, useAppSelector } from '@store/hooks';
 
 type WithPlacesProps = {
   city: string;
@@ -55,8 +52,6 @@ const NoPlaces = ({ city }: { city: string }) => (
 
 export default function MainPage() {
   const city = useAppSelector((state) => state.city);
-  // нормально делать логику фильтрации в селекторе?
-  // или вынести её в редьюсер и при установке города заполнять отдельное поле filteredCards?
   const cards = useAppSelector((state) =>
     state.cards.filter((card) => card.city.name === city)
   );
